@@ -1,8 +1,8 @@
-{ pkgs, modulesPath, inputs, ... }:
+{ pkgs, modulesPath, ... }:
 {
   imports = [
     "${modulesPath}/profiles/minimal.nix"
   ];
 
-  environment.systemPackages = with pkgs; [ wget git zip nixpkgs-fmt ];
+  environment.systemPackages = with pkgs; [ git nixpkgs-fmt ];
 }

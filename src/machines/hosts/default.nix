@@ -10,6 +10,7 @@ in
   Office = cell.lib.mkSystem {
     system = "x86_64-linux";
     profiles = [
+      cell.profiles.base
       cell.profiles.wsl
       cell.profiles.vscode-server
       security.profiles.gpg
