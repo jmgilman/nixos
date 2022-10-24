@@ -10,11 +10,14 @@ with lib;
   users.users.nixos.openssh.authorizedKeys = {
     keyFiles = [ ../../sshkey ];
   };
+
   services.openssh = {
     enable = true;
     ports = [ 22 ];
     extraConfig = "StreamLocalBindUnlink yes";
   };
+  programs.ssh.startAgent = true;
+
   services.vscode-server.enable = true;
   environment.systemPackages = with pkgs; [ wget git zip nixpkgs-fmt gnupg ];
 
