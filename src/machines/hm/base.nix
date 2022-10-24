@@ -12,7 +12,6 @@
     bat-extras.batdiff
     bat-extras.batwatch
     bat-extras.prettybat
-    diff-so-fancy
     fd
     fzf
     jq
@@ -51,6 +50,7 @@
       cat = "bat --paging=never";
       count = "find . -type f | wc -l";
       ct = "column -t";
+      g = "git";
       gbc = "git checkut -b ";
       gpb = ''git push origin "$(git rev-parse --abbrev-ref HEAD)"'';
       left = "ls -t -1";
