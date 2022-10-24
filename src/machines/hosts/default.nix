@@ -11,6 +11,7 @@ in
     system = "x86_64-linux";
     profiles = [
       cell.profiles.wsl
+      cell.profiles.vscode-server
       security.profiles.gpg
       security.profiles.ssh
       ./office
