@@ -25,7 +25,7 @@
       go = ''!f() { git checkout -b \"$1\" 2> /dev/null || git checkout \"$1\"; }; f'';
 
       # Push current branch
-      pb = ''push origin "$(git rev-parse --abbrev-ref HEAD)"'';
+      pb = ''!git push origin "$(git rev-parse --abbrev-ref HEAD)"'';
 
       # Show verbose output about tags, branches or remotes
       tags = "tag -l";
