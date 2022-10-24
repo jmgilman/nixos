@@ -4,7 +4,7 @@
 }:
 let
   inherit (inputs) nixos;
-  inherit (inputs.cells) dev security;
+  inherit (inputs.cells) cloud dev security;
 in
 {
   Office = cell.lib.mkSystem {
@@ -14,6 +14,8 @@ in
       cell.profiles.base
       cell.profiles.wsl
       cell.profiles.vscode-server
+      cloud.profiles.base
+      cloud.profiles.hashicorp
       dev.hm.git
       dev.profiles.git
       security.hm.gpg
