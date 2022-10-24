@@ -1,6 +1,10 @@
 { pkgs, defaultUser, ... }:
 {
-  environment.systemPackages = with pkgs; [ wget zip ];
+  environment.systemPackages = with pkgs; [ wget zip zsh ];
+
+  # Make zsh default shell
+  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.zsh;
 
   users.users.${defaultUser} = {
     isNormalUser = true;

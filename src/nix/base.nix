@@ -4,7 +4,11 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  environment.systemPackages = with pkgs; [ nixpkgs-fmt ];
+  environment.systemPackages = with pkgs; [
+    cachix
+    nixpkgs-fmt
+    nixos-generators
+  ];
 
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
