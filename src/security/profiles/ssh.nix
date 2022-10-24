@@ -1,3 +1,4 @@
+{ defaultUser, ... }:
 {
   services.openssh = {
     enable = true;
@@ -7,7 +8,7 @@
 
   programs.ssh.startAgent = true;
 
-  users.users.nixos.openssh.authorizedKeys = {
+  users.users.${defaultUser}.openssh.authorizedKeys = {
     keyFiles = [ ../files/sshkey ];
   };
 }

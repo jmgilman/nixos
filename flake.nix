@@ -22,6 +22,7 @@
         inherit inputs;
         cellsFrom = ./src;
         cellBlocks = [
+          (std.data "hm")
           (std.data "hosts")
           (std.data "profiles")
           (std.functions "lib")

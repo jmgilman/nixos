@@ -1,15 +1,13 @@
-{ lib, pkgs, config, modulesPath, inputs, ... }:
-
-with lib;
+{ inputs, defaultUser, ... }:
 {
   imports = [
     inputs.nixos-wsl.nixosModules.wsl
   ];
 
   wsl = {
+    inherit defaultUser;
     enable = true;
     automountPath = "/mnt";
-    defaultUser = "nixos";
     startMenuLaunchers = true;
   };
 }

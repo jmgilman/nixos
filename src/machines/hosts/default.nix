@@ -14,6 +14,7 @@ in
       cell.profiles.wsl
       cell.profiles.vscode-server
       dev.profiles.git
+      security.hm.gpg
       security.profiles.gpg
       security.profiles.ssh
       ./office

@@ -5,6 +5,9 @@ let
   inherit (inputs) nixos;
   inherit (inputs.cells) nix;
 in
+let
+  defaultUser = "josh";
+in
 {
   mkSystem =
     { system ? nixos.legacyPackages.system
@@ -18,7 +21,11 @@ in
         ]
         ++ profiles;
       specialArgs = {
-        inherit inputs;
+        inherit defaultUser inputs;
       };
+    };
+  mkHM = config:
+    {
+      home-manager.users.${defaultUser} = config;
     };
 }
