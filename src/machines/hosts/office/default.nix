@@ -1,25 +1,10 @@
-{ lib, pkgs, config, modulesPath, inputs, ... }:
-
-with lib;
+{ pkgs, modulesPath, inputs, ... }:
 {
   imports = [
     "${modulesPath}/profiles/minimal.nix"
     inputs.vscode-server.nixosModule
   ];
 
-  users.users.nixos.openssh.authorizedKeys = {
-    keyFiles = [ ../../sshkey ];
-  };
-
-  services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    extraConfig = "StreamLocalBindUnlink yes";
-  };
-  programs.ssh.startAgent = true;
-
   services.vscode-server.enable = true;
-  environment.systemPackages = with pkgs; [ wget git zip nixpkgs-fmt gnupg ];
-
-  programs.gnupg.agent = { enable = true; };
+  environment.systemPackages = with pkgs; [ wget git zip nixpkgs-fmt ];
 }
