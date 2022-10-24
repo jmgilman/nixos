@@ -4,7 +4,7 @@
 }:
 let
   inherit (inputs) nixos;
-  inherit (inputs.cells) security;
+  inherit (inputs.cells) dev security;
 in
 {
   Office = cell.lib.mkSystem {
@@ -13,6 +13,7 @@ in
       cell.profiles.base
       cell.profiles.wsl
       cell.profiles.vscode-server
+      dev.profiles.git
       security.profiles.gpg
       security.profiles.ssh
       ./office
