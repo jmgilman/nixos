@@ -44,6 +44,16 @@
     };
   };
 
+  # Enable tmux
+  programs.tmux = {
+    enable = true;
+
+    prefix = "C-a";
+    terminal = "screen-256color";
+
+    tmuxp.enable = true;
+  };
+
   # zsh configuration
   programs.zsh = {
     enable = true;
@@ -73,6 +83,9 @@
       mount = "mount | grep -E ^/dev | column -t";
       now = ''date +"%T"'';
       ports = "sudo lsof -iTCP -sTCP:LISTEN -n -P";
+      t = "tmux";
+      ta = "tmux attach";
+      tl = "tmux ls";
       today = ''date +"%d-%m-%Y"'';
       tree = "broot";
       vi = "vim";
