@@ -20,6 +20,7 @@ in
       dev.profiles.git
       dev.profiles.lang.rust
       dev.profiles.lang.python
+      dev.profiles.lang.shell
       security.hm.gpg
       security.profiles.gpg
       security.profiles.ssh
