@@ -4,7 +4,7 @@
 }:
 let
   inherit (inputs) nixos;
-  inherit (inputs.cells) cloud dev security;
+  inherit (inputs.cells) cloud dev security vm;
 in
 {
   Office = cell.lib.mkSystem {
@@ -22,6 +22,7 @@ in
       security.hm.gpg
       security.profiles.gpg
       security.profiles.ssh
+      vm.profiles.docker
       ./office
     ];
   };
