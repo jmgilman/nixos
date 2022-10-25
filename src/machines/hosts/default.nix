@@ -18,6 +18,7 @@ in
       cloud.profiles.hashicorp
       dev.hm.git
       dev.profiles.git
+      dev.profiles.lang.rust
       security.hm.gpg
       security.profiles.gpg
       security.profiles.ssh
