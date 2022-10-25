@@ -32,6 +32,7 @@
           (std.data "hosts")
           (std.data "profiles")
           (std.functions "lib")
+          (std.installables "packages")
         ];
       }
       (

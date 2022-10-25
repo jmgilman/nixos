@@ -5,13 +5,14 @@
   # Base packages
   home.packages = with pkgs; [
     any-nix-shell
-    autojump
-    bat
     bat-extras.batman
     bat-extras.batgrep
     bat-extras.batdiff
     bat-extras.batwatch
     bat-extras.prettybat
+    bottom
+    broot
+    exa
     fd
     fzf
     jq
@@ -27,6 +28,19 @@
     enable = true;
     nix-direnv = {
       enable = true;
+    };
+  };
+
+  # Enable autojump
+  programs.autojump = {
+    enable = true;
+  };
+
+  # Enable bat
+  programs.bat = {
+    enable = true;
+    config = {
+      theme = "dracula";
     };
   };
 
@@ -51,15 +65,16 @@
       count = "find . -type f | wc -l";
       ct = "column -t";
       g = "git";
-      gbc = "git checkut -b ";
       gpb = ''git push origin "$(git rev-parse --abbrev-ref HEAD)"'';
       left = "ls -t -1";
-      ll = "ls -la";
-      lt = "du -sh * | sort -h";
+      ls = "exa";
+      ll = "exa -la";
+      lt = "exa --tree";
       mount = "mount | grep -E ^/dev | column -t";
       now = ''date +"%T"'';
       ports = "sudo lsof -iTCP -sTCP:LISTEN -n -P";
       today = ''date +"%d-%m-%Y"'';
+      tree = "broot";
       vi = "vim";
     };
 
@@ -100,9 +115,6 @@
 
       # Configure any-nix-shell
       any-nix-shell zsh --info-right | source /dev/stdin
-
-      # Configure autojump
-      source ${pkgs.autojump}/share/zsh/site-functions/autojump.zsh
     '';
   };
 }
