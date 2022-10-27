@@ -87,6 +87,7 @@
       lt = "exa --tree";
       mount = "mount | grep -E ^/dev | column -t";
       now = ''date +"%T"'';
+      nr = "sudo nixos-rebuild switch --flake ~/code/nixos#Office && source ~/.zshrc";
       ports = "sudo lsof -iTCP -sTCP:LISTEN -n -P";
       t = "tmux";
       ta = "tmux attach";
