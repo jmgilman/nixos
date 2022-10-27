@@ -9,6 +9,9 @@
   programs.ssh.startAgent = true;
 
   users.users.${defaultUser}.openssh.authorizedKeys = {
-    keyFiles = [ ../files/sshkey ];
+    keyFiles = [
+      ../files/mac_sshkey
+      ../files/office_sshkey
+    ];
   };
 }

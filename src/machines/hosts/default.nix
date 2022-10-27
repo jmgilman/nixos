@@ -24,6 +24,7 @@ in
       security.hm.ssh
       security.profiles.gpg
       security.profiles.ssh
+      security.profiles.tailscale
       vm.profiles.docker
       ./office
     ];
