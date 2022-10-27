@@ -13,4 +13,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
   };
+
+  # No sudo password
+  security.sudo.wheelNeedsPassword = false;
 }
