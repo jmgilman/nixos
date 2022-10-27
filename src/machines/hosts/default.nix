@@ -12,7 +12,6 @@ in
     profiles = [
       cell.hm.base
       cell.profiles.base
-      cell.profiles.wsl
       cell.profiles.vscode-server
       cloud.profiles.base
       cloud.profiles.hashicorp
@@ -22,6 +21,7 @@ in
       dev.profiles.lang.python
       dev.profiles.lang.shell
       security.hm.gpg
+      security.hm.ssh
       security.profiles.gpg
       security.profiles.ssh
       vm.profiles.docker
