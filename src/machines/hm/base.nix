@@ -80,6 +80,8 @@
       cat = "bat --paging=never";
       count = "find . -type f | wc -l";
       ct = "column -t";
+      da = "direnv allow";
+      dr = "direnv reload";
       g = "git";
       gpb = ''git push origin "$(git rev-parse --abbrev-ref HEAD)"'';
       left = "ls -t -1";
