@@ -16,6 +16,7 @@
     fd
     fzf
     jq
+    magic-wormhole
     pure-prompt
     ripgrep
     tldr
