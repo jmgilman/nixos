@@ -26,6 +26,7 @@ in
       security.profiles.ssh
       security.profiles.tailscale
       vm.profiles.docker
+      vm.profiles.lxd
       ./office
     ];
   };
