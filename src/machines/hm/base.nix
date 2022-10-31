@@ -114,16 +114,11 @@
 
     # Extra environment variables
     envExtra = ''
-      function aws-switch() {
-        case ''${1} in
-            "")
-            clear)
-                export AWS_PROFILE=""
-                ;;
-            *)
-                export AWS_PROFILE="''${1}"
-                ;;
-        esac
+      rcode() {
+        for proj in "$@"; do
+            proj=$(realpath $proj)
+            ssh office code --folder-uri "vscode-remote://ssh-remote+work$proj"
+        done
       }
     '';
 

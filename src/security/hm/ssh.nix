@@ -7,8 +7,13 @@
         user = "jmgilman";
         identityFile = "~/.ssh/id_ed25519_sk";
       };
-      "work" = {
+      "office" = {
         hostname = "office.gilman.io";
+        user = "joshu";
+        identityFile = "~/.ssh/id_ed25519_sk";
+      };
+      "work" = {
+        hostname = "work.gilman.io";
         user = "josh";
         identityFile = "~/.ssh/id_ed25519_sk";
       };
