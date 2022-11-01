@@ -12,6 +12,7 @@
     bat-extras.prettybat
     bottom
     broot
+    diffoscope
     exa
     fd
     fzf
