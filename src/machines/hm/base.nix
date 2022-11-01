@@ -16,6 +16,7 @@
     exa
     fd
     fzf
+    hostctl
     jq
     magic-wormhole
     pure-prompt
