@@ -21,6 +21,11 @@
         user = "josh";
         identityFile = "~/.ssh/id_ed25519";
       };
+      "dns" = {
+        hostname = "192.168.0.124";
+        user = "josh";
+        identityFile = "~/.ssh/id_ed25519";
+      };
     };
   };
 }

@@ -13,6 +13,7 @@
     bottom
     broot
     diffoscope
+    dig
     exa
     fd
     fzf
