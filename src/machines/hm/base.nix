@@ -16,6 +16,7 @@
     exa
     fd
     fzf
+    gopass
     helix
     jq
     magic-wormhole
