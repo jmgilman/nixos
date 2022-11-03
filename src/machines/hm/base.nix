@@ -12,6 +12,7 @@
     bat-extras.prettybat
     bottom
     broot
+    dasel
     diffoscope
     dig
     exa
@@ -19,6 +20,7 @@
     fzf
     gopass
     helix
+    jc
     jq
     magic-wormhole
     pure-prompt
@@ -35,11 +37,6 @@
     nix-direnv = {
       enable = true;
     };
-  };
-
-  # Enable autojump
-  programs.autojump = {
-    enable = true;
   };
 
   # Enable bat
