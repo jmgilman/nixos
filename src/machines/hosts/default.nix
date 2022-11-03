@@ -5,6 +5,7 @@
 let
   inherit (inputs) nixos;
   inherit (inputs.cells) cloud dev security vm;
+  inherit (inputs.cells.machines.lib) mkHM;
 in
 {
   Office = cell.lib.mkSystem {
@@ -28,6 +29,7 @@ in
       vm.profiles.docker
       vm.profiles.lxd
       ./office
+      (mkHM (import ./office/hm.nix))
     ];
   };
 }

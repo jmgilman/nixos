@@ -16,12 +16,13 @@
     exa
     fd
     fzf
-    hostctl
+    helix
     jq
     magic-wormhole
     pure-prompt
     ripgrep
     tldr
+    vim
     yj
     yq-go
   ];
