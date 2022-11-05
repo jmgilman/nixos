@@ -4,6 +4,7 @@
 
   # Base packages
   home.packages = with pkgs; [
+    alejandra
     any-nix-shell
     bat-extras.batman
     bat-extras.batgrep
