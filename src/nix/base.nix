@@ -1,5 +1,8 @@
-{ pkgs, inputs, ... }:
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
   ];
@@ -22,8 +25,8 @@
 
     settings = {
       auto-optimise-store = true;
-      allowed-users = [ "@wheel" ];
-      trusted-users = [ "root" "@wheel" ];
+      allowed-users = ["@wheel"];
+      trusted-users = ["root" "@wheel"];
       experimental-features = [
         "flakes"
         "nix-command"
@@ -31,5 +34,10 @@
       ];
       accept-flake-config = true;
     };
+
+    extraOptions = ''
+      keep-outputs = true
+      keep-derivations = true
+    '';
   };
 }
