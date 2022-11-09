@@ -12,6 +12,7 @@
     bat-extras.prettybat
     bottom
     broot
+    cheat
     dasel
     diffoscope
     dig
@@ -44,6 +45,17 @@
     enable = true;
     config = {
       theme = "dracula";
+    };
+  };
+
+  programs.navi = {
+    enable = true;
+    settings = {
+      cheats = {
+        paths = [
+          "~/code/navi"
+        ];
+      };
     };
   };
 
