@@ -19,28 +19,34 @@
   inputs.rust-overlay.url = "github:oxalica/rust-overlay";
   inputs.rust-overlay.inputs.nixpkgs.follows = "nixos";
 
+  inputs.tree-grepper.url = "github:brianhicks/tree-grepper";
+  inputs.tree-grepper.inputs.nixpkgs.follows = "nixos";
+
   inputs.vscode-server.url = "github:msteen/nixos-vscode-server";
   inputs.vscode-server.inputs.nixpkgs.follows = "nixos";
 
-  outputs = inputs @ { self, std, ... }:
+  outputs = inputs @ {
+    self,
+    std,
+    ...
+  }:
     std.growOn
-      {
-        inherit inputs;
-        cellsFrom = ./src;
-        cellBlocks = [
-          (std.data "hm")
-          (std.data "hosts")
-          (std.data "profiles")
-          (std.functions "lib")
-          (std.installables "packages")
-        ];
+    {
+      inherit inputs;
+      cellsFrom = ./src;
+      cellBlocks = [
+        (std.data "hm")
+        (std.data "hosts")
+        (std.data "profiles")
+        (std.functions "lib")
+        (std.installables "packages")
+      ];
+    }
+    (
+      let
+        system = builtins.currentSystem or "x86_64-linux";
+      in {
+        nixosConfigurations = (std.harvest self ["machines" "hosts"]).${system};
       }
-      (
-        let
-          system = builtins.currentSystem or "x86_64-linux";
-        in
-        {
-          nixosConfigurations = (std.harvest self [ "machines" "hosts" ]).${system};
-        }
-      );
+    );
 }

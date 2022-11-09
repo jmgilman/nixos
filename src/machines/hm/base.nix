@@ -1,36 +1,40 @@
-{pkgs, ...}: {
+{inputs}: {pkgs, ...}: let
+  inherit (inputs.tree-grepper.packages) tree-grepper;
+in {
   home.stateVersion = "22.05";
 
   # Base packages
-  home.packages = with pkgs; [
-    alejandra
-    any-nix-shell
-    bat-extras.batman
-    bat-extras.batgrep
-    bat-extras.batdiff
-    bat-extras.batwatch
-    bat-extras.prettybat
-    bottom
-    broot
-    cheat
-    dasel
-    diffoscope
-    dig
-    exa
-    fd
-    fzf
-    gopass
-    helix
-    jc
-    jq
-    magic-wormhole
-    pure-prompt
-    ripgrep
-    tldr
-    vim
-    yj
-    yq-go
-  ];
+  home.packages = with pkgs;
+    [
+      alejandra
+      any-nix-shell
+      bat-extras.batman
+      bat-extras.batgrep
+      bat-extras.batdiff
+      bat-extras.batwatch
+      bat-extras.prettybat
+      bottom
+      broot
+      cheat
+      dasel
+      diffoscope
+      dig
+      exa
+      fd
+      fzf
+      gopass
+      helix
+      jc
+      jq
+      magic-wormhole
+      pure-prompt
+      ripgrep
+      tldr
+      vim
+      yj
+      yq-go
+    ]
+    ++ [tree-grepper];
 
   # Enable direnv with nix support
   programs.direnv = {
