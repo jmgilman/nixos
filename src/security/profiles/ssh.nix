@@ -5,7 +5,10 @@
     permitRootLogin = "no";
     passwordAuthentication = false;
     kbdInteractiveAuthentication = false;
-    extraConfig = "StreamLocalBindUnlink yes";
+    extraConfig = ''
+      StreamLocalBindUnlink yes
+      GatewayPorts yes
+    '';
   };
 
   programs.ssh.startAgent = true;
