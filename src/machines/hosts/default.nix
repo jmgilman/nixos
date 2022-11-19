@@ -1,13 +1,11 @@
-{ inputs
-, cell
-,
-}:
-let
+{
+  inputs,
+  cell,
+}: let
   inherit (inputs) nixos;
   inherit (inputs.cells) cloud dev security vm;
   inherit (inputs.cells.machines.lib) mkHM;
-in
-{
+in {
   Office = cell.lib.mkSystem {
     system = "x86_64-linux";
     profiles = [
@@ -27,6 +25,7 @@ in
       security.profiles.ssh
       security.profiles.tailscale
       vm.profiles.docker
+      vm.profiles.libvirtd
       vm.profiles.lxd
       ./office
       (mkHM (import ./office/hm.nix))
