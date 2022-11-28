@@ -26,9 +26,11 @@ in {
       helix
       jc
       jq
+      kubectl
       magic-wormhole
       pure-prompt
       ripgrep
+      talosctl
       tldr
       vim
       yj
