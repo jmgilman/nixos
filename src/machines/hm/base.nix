@@ -24,6 +24,7 @@ in {
       fzf
       gopass
       helix
+      httpie
       jc
       jq
       kubectl
