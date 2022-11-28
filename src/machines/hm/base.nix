@@ -114,6 +114,7 @@ in {
       ports = "sudo lsof -iTCP -sTCP:LISTEN -n -P";
       t = "tmux";
       ta = "tmux attach";
+      tf = "terraform";
       tl = "tmux ls";
       today = ''date +"%d-%m-%Y"'';
       tree = "broot";
