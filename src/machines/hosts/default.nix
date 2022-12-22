@@ -12,6 +12,7 @@ in {
       cell.hm.base
       cell.profiles.base
       cell.profiles.vscode-server
+      cloud.hm.base
       cloud.profiles.base
       cloud.profiles.hashicorp
       dev.hm.git

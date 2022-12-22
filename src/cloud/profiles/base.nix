@@ -1,8 +1,7 @@
-{ pkgs, ... }:
-{
-  environment.systemPackages = with pkgs;
-    [
-      awscli2
-      google-cloud-sdk
-    ];
+{pkgs, ...}: {
+  environment.systemPackages = with pkgs; [
+    awscli2
+    aws-vault
+    google-cloud-sdk
+  ];
 }

@@ -97,6 +97,7 @@ in {
     shellAliases = {
       ".." = "cd ..";
       "..." = "cd ../..";
+      aws = "aws-vault exec $AWS_PROFILE -- aws";
       brg = "batgrep";
       cat = "bat --paging=never";
       count = "find . -type f | wc -l";
