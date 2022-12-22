@@ -20,4 +20,7 @@
 
   # Required by LXD to talk to QEMU guests
   boot.kernelModules = ["vhost_vsock"];
+
+  # Required by libvirtd
+  security.polkit.enable = true;
 }

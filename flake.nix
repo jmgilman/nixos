@@ -1,6 +1,6 @@
 {
   # Nix inputs
-  inputs.nixos.url = "nixpkgs/nixos-22.05";
+  inputs.nixos.url = "nixpkgs/nixos-22.11";
   inputs.nixpkgs.follows = "nixos";
 
   inputs.nix.url = "nix/2.11-maintenance";
@@ -9,7 +9,7 @@
   inputs.nixos-wsl.inputs.nixpkgs.follows = "nixos";
 
   # Supporting inputs
-  inputs.home-manager.url = "github:nix-community/home-manager/release-22.05";
+  inputs.home-manager.url = "github:nix-community/home-manager/release-22.11";
   inputs.home-manager.inputs.nixpkgs.follows = "nixos";
 
   inputs.std.url = "github:divnix/std";

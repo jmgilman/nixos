@@ -7,6 +7,8 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
+  system.stateVersion = "22.11";
+
   environment.systemPackages = with pkgs; [
     cachix
     nixpkgs-fmt
