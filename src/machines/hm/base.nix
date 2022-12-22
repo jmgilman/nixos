@@ -116,6 +116,7 @@ in {
       t = "tmux";
       ta = "tmux attach";
       tf = "terraform";
+      tg = "terragrunt";
       tl = "tmux ls";
       today = ''date +"%d-%m-%Y"'';
       tree = "broot";
