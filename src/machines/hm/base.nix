@@ -1,5 +1,13 @@
 {inputs}: {pkgs, ...}: let
   inherit (inputs.tree-grepper.packages) tree-grepper;
+
+  # Custom scripts
+  aws-vault-login = pkgs.writeShellScript "aws-vault-login" ''
+    auth="$(aws-vault exec "$AWS_PROFILE" -t "$(gopass otp -o aws/mfa)" -j)"
+    export AWS_ACCESS_KEY_ID="$(echo "$auth" | jq -r .AccessKeyId)"
+    export AWS_SECRET_ACCESS_KEY="$(echo "$auth" | jq -r .SecretAccessKey)"
+    export AWS_SESSION_TOKEN="$(echo "$auth" | jq -r .SessionToken)"
+  '';
 in {
   home.stateVersion = "22.05";
 
@@ -98,6 +106,7 @@ in {
       ".." = "cd ..";
       "..." = "cd ../..";
       aws = "aws-vault exec $AWS_PROFILE -- aws";
+      aws-vault-login = "source ${aws-vault-login}";
       brg = "batgrep";
       cat = "bat --paging=never";
       count = "find . -type f | wc -l";
