@@ -105,7 +105,6 @@ in {
     shellAliases = {
       ".." = "cd ..";
       "..." = "cd ../..";
-      aws = "aws-vault exec $AWS_PROFILE -- aws";
       aws-vault-login = "source ${aws-vault-login}";
       brg = "batgrep";
       cat = "bat --paging=never";
