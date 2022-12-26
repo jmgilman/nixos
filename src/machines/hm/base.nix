@@ -119,6 +119,7 @@ in {
       ll = "exa -la";
       lt = "exa --tree";
       mount = "mount | grep -E ^/dev | column -t";
+      new-repo = "gh repo create --public --template jmgilman/template --clone";
       now = ''date +"%T"'';
       nr = "sudo nixos-rebuild switch --flake ~/code/nixos#Office && source ~/.zshrc";
       ports = "sudo lsof -iTCP -sTCP:LISTEN -n -P";
