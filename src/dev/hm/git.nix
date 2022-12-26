@@ -1,5 +1,7 @@
-{ inputs, nixpkgs }:
 {
+  inputs,
+  nixpkgs,
+}: {
   programs.git = {
     enable = true;
 
@@ -84,31 +86,4 @@
     userName = "Joshua Gilman";
     userEmail = "joshuagilman@gmail.com";
   };
-
-  programs.gh = {
-    enable = true;
-    settings = {
-      git_protocol = "ssh";
-
-      aliases = {
-        co = "pr checkout";
-        pv = "pr view";
-      };
-    };
-  };
-
-  # gh extensions
-  # TODO: fix broken package
-  # xdg.dataFile."gh/extensions" =
-  #   let
-  #     exts = with inputs.cells.dev.packages; [ gh-dash ];
-  #   in
-  #   {
-  #     source = nixpkgs.linkFarm "gh-extensions" (builtins.map
-  #       (p: {
-  #         name = p.pname;
-  #         path = "${p}/bin";
-  #       })
-  #       exts);
-  #   };
 }
