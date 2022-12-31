@@ -2,7 +2,7 @@
   inherit (inputs.tree-grepper.packages) tree-grepper;
 
   # Custom scripts for aws-vault
-  aws-vault-cred = pkgs.writeShellScript "aws-vault-login" ''
+  aws-vault-cred = pkgs.writeShellScript "aws-vault-cred" ''
     if [[ -z "$1" ]]; then
       echo "error: Missing profile name"
       exit 1
@@ -26,13 +26,13 @@
 
     # Return auth details
     if [[ ! -z "$mfa" ]]; then
-      aws-vault exec -j -t "$(gopass otp -o aws/mfa-$1)" "$1"
+      aws-vault exec -j -t "$(gopass otp -o aws/mfa-$1)" "$1" 2> /dev/null
     else
-      aws-vault exec -j -n "$1"
+      aws-vault exec -j -n "$1" 2> /dev/null
     fi
   '';
 
-  aws-vault-add = pkgs.writeShellScript "aws-vault-login" ''
+  aws-vault-add = pkgs.writeShellScript "aws-vault-add" ''
     if [[ -z "$1" ]]; then
       echo "error: Missing profile name"
       exit 1
@@ -66,7 +66,7 @@
     aws configure set credential_process "${aws-vault-cred} $1" --profile "$1"
   '';
 
-  aws-vault-add-mfa = pkgs.writeShellScript "aws-vault-login" ''
+  aws-vault-add-mfa = pkgs.writeShellScript "aws-vault-mfa" ''
     if [[ -z "$1" ]]; then
       echo "error: Missing profile name"
       exit 1
