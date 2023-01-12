@@ -214,6 +214,7 @@ in {
       cat = "bat --paging=never";
       count = "find . -type f | wc -l";
       ct = "column -t";
+      d = "docker";
       da = "direnv allow";
       dr = "direnv reload";
       g = "git";
