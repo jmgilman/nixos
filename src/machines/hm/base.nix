@@ -217,6 +217,7 @@ in {
       d = "docker";
       da = "direnv allow";
       dr = "direnv reload";
+      dp = "docker container prune -f && docker image prune -af";
       g = "git";
       gpb = ''git push origin "$(git rev-parse --abbrev-ref HEAD)"'';
       h = "helm";
